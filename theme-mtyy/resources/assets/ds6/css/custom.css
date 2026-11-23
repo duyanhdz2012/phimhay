@@ -1,0 +1,117 @@
+#nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0.96), rgba(5, 5, 5, 0.85));
+}
+
+.search-min-box {
+    position: relative;
+}
+
+.search-min-box .input {
+    padding: 8px 36px 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: rgba(0, 0, 0, 0.65);
+    color: #ffffff;
+    min-width: 220px;
+}
+
+.search-min-box .input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.search-min-box #dsSo {
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .search-min-box .input {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+#result {
+    margin-top: 12px;
+    background-color: #222222;
+    list-style-type: none;
+    width: min(500px, 100% - 16px);
+    position: fixed;
+    top: 56px;
+    right: 8px;
+    z-index: 9999;
+    padding: 4px 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+#result a {
+    overflow: hidden;
+    display: block;
+    border-radius: 0;
+    color: #ffffff;
+}
+
+@media (max-width: 768px) {
+    #result {
+        top: 52px;
+        left: 8px;
+        right: 8px;
+        width: auto;
+    }
+}
+
+.column {
+    float: left;
+    padding: 5px;
+}
+
+.lefts {
+    text-align: center;
+    width: 22%;
+}
+
+.rights {
+    width: 78%;
+}
+
+.rowsearch:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#result .rowsearch {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 6px 10px;
+    column-gap: 8px;
+}
+
+#result .rowsearch img {
+    border-radius: 4px;
+}
+
+#result .rowsearch p {
+    margin-bottom: 2px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+.rowsearch:hover {
+    background-color: #2d2d2d;
+}
